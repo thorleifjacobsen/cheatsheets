@@ -45,16 +45,15 @@ hashcat -m <mode> -a 0 <hashfile> <dictionary file>
 
 ### Mask Placeholders
 
-| Placeholder | Character Set          | Description                         | Example Characters                |
-|-------------|------------------------|-------------------------------------|------------------------------------|
-| `?l`        | Lowercase letters      | All lowercase English letters.      | a, b, c, ..., z                   |
-| `?u`        | Uppercase letters      | All uppercase English letters.      | A, B, C, ..., Z                   |
-| `?d`        | Digits                 | All numeric digits.                 | 0, 1, 2, ..., 9                   |
-| `?s`        | Special characters     | Common special characters.          | ! @ # $ % ^ & * ( ) - _ = +       |
-| `?a`        | All characters         | Combines `?l`, `?u`, `?d`, and `?s`.| a-z, A-Z, 0-9, special chars       |
-| `?b`        | All possible bytes     | Includes all 8-bit values (ASCII).  | Non-printable and printable chars |
-| `?h`        | Hexadecimal lowercase | Lowercase hexadecimal values.       | a, b, c, d, e, f                  |
-| `?H`        | Hexadecimal uppercase | Uppercase hexadecimal values.       | A, B, C, D, E, F                  |
+| Placeholder | Character Set          |
+|-------------|------------------------|
+| `?l`        | `abcdefghijklmnopqrstuvwxyz` |
+| `?u`        | `ABCDEFGHIJKLMNOPQRSTUVWXYZ` |
+| `?d`        | `0123456789` |
+| `?s`        | ` «space»!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ` |
+| `?a`        | `?l?u?d?s` |
+| `?b`        | `0x00 - 0xff` |
+
 
 ### Example Masks
 1. `?u?l?d`: Uppercase, lowercase, and digit (e.g., A1b).
